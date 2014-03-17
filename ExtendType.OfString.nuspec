@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<language>en-us</language>
+		<id>ExtendType.OfString</id>
+		<version>1.0.0</version>
+		<authors>Scott Wood</authors>
+		<owners>AbstractLabs</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>A library of fluent utility extensions for System.String</description>
+		<summary>A library of fluent utility extensions for System.String</summary>
+		<frameworkAssemblies>
+			<frameworkAssembly assemblyName="System" targetFramework="net40" />
+		</frameworkAssemblies>
+		<projectUrl>https://github.com/ExtendType/OfString</projectUrl>
+		<licenseUrl>https://github.com/ExtendType/OfString/blob/master/LICENSE</licenseUrl>
+		<copyright>AbstractLabs 2014</copyright>
+		<tags>fluent string utility extensions</tags>
+	</metadata>
+	<files>
+		<file src=".\ExtendType.OfString\bin\Release\*.dll" target="lib\net40" />
+	</files>
+</package>
