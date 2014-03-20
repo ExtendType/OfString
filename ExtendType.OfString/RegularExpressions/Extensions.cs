@@ -11,12 +11,12 @@ namespace ExtendType.OfString.RegularExpressions
 	public static class Extensions
 	{
 		/// <summary>
-		/// To regular expression pattern
+		/// Converts the string into a regular expression pattern
 		/// </summary>
 		public static Regex ToRegex(this string instance, RegexOptions options)
 		{
 			Regex result = null;
-			if (instance != null)
+			if (String.IsNullOrWhiteSpace(instance))
 			{
 				result = new Regex(instance, options);
 			}
@@ -24,35 +24,51 @@ namespace ExtendType.OfString.RegularExpressions
 		}
 
 		/// <summary>
-		/// Converts string to regular expression
+		/// Converts the string into a regular expression pattern
 		/// </summary>
 		public static Regex ToRegex(this string instance)
 		{
-			return ToRegex(instance, RegexOptions.None);
+			Regex result = null;
+			if (String.IsNullOrWhiteSpace(instance))
+			{
+				result = new Regex(instance, RegexOptions.None);
+			}
+			return result;
 		}
 
 		/// <summary>
-		/// Converts a file system wild card pattern to a regular expression
+		/// Converts string from a wildcard pattern to a regualr exprssion pattern
 		/// </summary>
+		/// <example>
+		/// Wildcard: My?
+		/// Wildcard: My*
+		/// </example>
 		public static Regex ToWildcard(this string wildcard)
 		{
-			return String.Concat('^', Regex.Escape(wildcard).Replace("\\?", ".").Replace("\\*", ".*"), '$').ToRegex();
+			Regex result = null;
+			if (!String.IsNullOrWhiteSpace(wildcard))
+			{
+				result = new Regex(String.Concat('^', Regex.Escape(wildcard).Replace("\\?", ".").Replace("\\*", ".*"), '$'), RegexOptions.None);
+			}
+			return result;
 		}
 
 		/// <summary>
-		/// Match the string to a regular expression pattern
+		/// Matches the string string to the supplied pattern
 		/// </summary>
 		public static bool IsMatch(this string instance, string pattern, RegexOptions options)
 		{
+			Contract.Requires<ArgumentNullException>(!String.IsNullOrWhiteSpace(pattern));
 			return instance != null && Regex.IsMatch(instance, pattern, options);
 		}
 
 		/// <summary>
-		/// Match the string to a regular expression pattern
+		/// Matches the string string to the supplied pattern
 		/// </summary>
 		public static bool IsMatch(this string instance, string pattern)
 		{
-			return IsMatch(instance, pattern, RegexOptions.None);
+			Contract.Requires<ArgumentNullException>(!String.IsNullOrWhiteSpace(pattern));
+			return instance != null && Regex.IsMatch(instance, pattern,RegexOptions.None);
 		}
 	}
 }

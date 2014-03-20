@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExtendType.OfString.Validation;
+using ExtendType.OfString.Whitespace;
 using FluentAssertions;
-namespace ExtendType.OfString.Tests.Validation
+namespace ExtendType.OfString.Tests.Whitespace
 {
 	[TestClass]
 	public class ExtensionTests
@@ -59,16 +59,16 @@ namespace ExtendType.OfString.Tests.Validation
 		public void IsNullOrWhitespaceTest()
 		{
 			TestContext.WriteLine("Success: value is not null, empty or whitespace");
-			"test".IsNotNullOrWhitespace()
+			"test".IsNotNullOrWhiteSpace()
 				.Should().Be(true);
 			TestContext.WriteLine("Fail: value is null");
-			((string)null).IsNotNullOrWhitespace()
+			((string)null).IsNotNullOrWhiteSpace()
 				.Should().Be(false);
 			TestContext.WriteLine("Fail: value is empty");
-			String.Empty.IsNotNullOrWhitespace()
+			String.Empty.IsNotNullOrWhiteSpace()
 				.Should().Be(false);
 			TestContext.WriteLine("Fail: value is whitespace");
-			" ".IsNotNullOrWhitespace()
+			" ".IsNotNullOrWhiteSpace()
 				.Should().Be(false);
 		}
 	}

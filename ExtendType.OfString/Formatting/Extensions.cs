@@ -9,11 +9,8 @@ namespace ExtendType.OfString.Formatting
 	public static class Extensions
 	{
 		/// <summary>
-		/// A convenience shortcut to using System.Format string
+		/// A shortcut method to using System.Format string
 		/// </summary>
-		/// <param name="instance">The string to apply the format to</param>
-		/// <param name="args">Arguments to apply in the format</param>
-		/// <returns>Returns a string or null if the instance provided was null</returns>
 		public static string FormatWith(this string instance, params object[] args)
 		{
 			string result = instance;
@@ -21,12 +18,8 @@ namespace ExtendType.OfString.Formatting
 			return result;
 		}
 		/// <summary>
-		/// A convenience shortcut to using System.Format string
+		/// A shortcut method to using System.Format string
 		/// </summary>
-		/// <param name="instance">The string to apply the format to</param>
-		/// <param name="provider">the format provider to be used against string</param>
-		/// <param name="args">Arguments to apply in the format</param>
-		/// <returns>Returns a string or null if the instance provided was null</returns>
 		public static string FormatWith(this string instance, IFormatProvider provider, params object[] args)
 		{
 			string result = instance;
