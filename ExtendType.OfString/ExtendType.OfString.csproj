@@ -34,11 +34,12 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capitalization\Extensions.cs" />
     <Compile Include="Formatting\Extensions.cs" />
-    <Compile Include="Regex\Extensions.cs" />
+    <Compile Include="RegularExpressions\Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trimming\Extensions.cs" />
-    <Compile Include="Validation\Extensions.cs" />
+    <Compile Include="Whitespace\Extensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

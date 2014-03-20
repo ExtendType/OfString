@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExtendType.OfString.Validation
+namespace ExtendType.OfString.Whitespace
 {
 	public static class Extensions
 	{
@@ -35,14 +35,27 @@ namespace ExtendType.OfString.Validation
 		{
 			return !String.IsNullOrEmpty(instance);
 		}
+
 		/// <summary>
 		/// Provides a shortcut method to using String.IsNullOrWhitespace
 		/// </summary>
 		/// <param name="instance">The string to be validated</param>
 		/// <returns>False if the string is null, empty or contains whitespace true if not</returns>
-		public static bool IsNotNullOrWhitespace(this string instance)
+		public static bool IsNotNullOrWhiteSpace(this string instance)
 		{
 			return !String.IsNullOrWhiteSpace(instance);
+		}
+		public static string IfNullOrEmpty(this string instance, string value)
+		{
+			string result = instance;
+			if (String.IsNullOrEmpty(instance)) result = value;
+			return result;
+		}
+		public static string IfNullOrWhiteSpace(this string instance, string value)
+		{
+			string result = instance;
+			if (String.IsNullOrWhiteSpace(instance)) result = value;
+			return result;
 		}
 	}
 }
