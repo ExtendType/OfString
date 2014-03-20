@@ -51,10 +51,22 @@ namespace ExtendType.OfString.Whitespace
 			if (String.IsNullOrEmpty(instance)) result = value;
 			return result;
 		}
+		public static string IfNullOrEmpty(this string instance)
+		{
+			string result = instance;
+			if (String.IsNullOrEmpty(instance)) result = String.Empty;
+			return result;
+		}
 		public static string IfNullOrWhiteSpace(this string instance, string value)
 		{
 			string result = instance;
 			if (String.IsNullOrWhiteSpace(instance)) result = value;
+			return result;
+		}
+		public static string IfNullOrWhiteSpace(this string instance)
+		{
+			string result = instance;
+			if (String.IsNullOrWhiteSpace(instance)) result = String.Empty;
 			return result;
 		}
 	}
