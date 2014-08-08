@@ -3,7 +3,7 @@
 	<metadata>
 		<language>en-us</language>
 		<id>ExtendType.OfString</id>
-		<version>2.4.1</version>
+		<version>2.4.2</version>
 		<authors>Scott Wood</authors>
 		<owners>AbstractLabs</owners>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -14,7 +14,7 @@
 		<copyright>AbstractLabs 2014</copyright>
 		<tags>fluent string utility extensions</tags>
 		<releaseNotes>
-Moved WhiteSpace to Validation namespace this will be a convention used across all extended type libraries.
+2.4.2 - Added additional nullable conversions to Conversion extensions
 		</releaseNotes>
 	</metadata>
 	<files>
