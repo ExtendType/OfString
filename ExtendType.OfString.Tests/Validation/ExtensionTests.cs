@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExtendType.OfString.Whitespace;
+using ExtendType.OfString.Validation;
 using FluentAssertions;
-namespace ExtendType.OfString.Tests.Whitespace
+namespace ExtendType.OfString.Tests.Validation
 {
 	[TestClass]
 	public class ExtensionTests

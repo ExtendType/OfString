@@ -16,7 +16,7 @@
 		</FrameworkVersion>
 	</ItemGroup>
 	<Target Outputs="@(FrameworkVersion.Identity)" Name="Build">
-		<MSBuild Projects="@(Package)" Properties="Configuration=$(Configuration);TargetFrameworkVersion=%(FrameworkVersion.Identity);OutDir=..\lib\%(FrameworkVersion.PackagePath)"/>
+		<MSBuild Projects="@(Package)" Targets="Build" Properties="Configuration=$(Configuration);TargetFrameworkVersion=%(FrameworkVersion.Identity);OutDir=..\lib\%(FrameworkVersion.PackagePath)"/>
 	</Target>
 	<Target Outputs="@(Specification.Identity)" Name="Package" DependsOnTargets="Build">
 		<Exec Command="..\.nuget\nuget.exe pack &quot;%(Specification.Identity)&quot; -OutputDirectory &quot;Packaged&quot;"/>

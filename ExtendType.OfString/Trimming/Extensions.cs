@@ -49,7 +49,7 @@ namespace ExtendType.OfString.Trimming
 		/// <returns>The string constrained to the length provided</returns>
 		public static string Constrain(this string instance, int length)
 		{
-			Contract.Requires<ArgumentOutOfRangeException>(length <= 0);
+			Contract.Requires<ArgumentOutOfRangeException>(length >= 0);
 			if (!String.IsNullOrEmpty(instance) && instance.Length > length) instance = instance.Substring(0, length);
 			return instance;
 		}

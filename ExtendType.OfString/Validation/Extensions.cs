@@ -4,10 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExtendType.OfString.Whitespace
+namespace ExtendType.OfString.Validation
 {
 	public static class Extensions
 	{
+		/// <summary>
+		/// Provides a shortcut method to using String.IsNullOrEmpty
+		/// </summary>
+		/// <param name="instance">The string to be validated</param>
+		/// <returns>True if the string is null or empty false if not</returns>
+		public static bool IsEmpty(this string instance)
+		{
+			return String.IsNullOrEmpty(instance);
+		}
 		/// <summary>
 		/// Provides a shortcut method to using String.IsNullOrEmpty
 		/// </summary>
