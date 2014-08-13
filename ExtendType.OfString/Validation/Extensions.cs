@@ -18,6 +18,15 @@ namespace ExtendType.OfString.Validation
 			return String.IsNullOrEmpty(instance);
 		}
 		/// <summary>
+		/// Provides a shortcut method to using not String.IsNullOrEmpty
+		/// </summary>
+		/// <param name="instance">The string to be validated</param>
+		/// <returns>True if the string is not null or empty and false if null or empty</returns>
+		public static bool IsNotEmpty(this string instance)
+		{
+			return !String.IsNullOrEmpty(instance);
+		}
+		/// <summary>
 		/// Provides a shortcut method to using String.IsNullOrEmpty
 		/// </summary>
 		/// <param name="instance">The string to be validated</param>
