@@ -129,5 +129,23 @@ namespace ExtendType.OfString.Conversion
 			if (String.IsNullOrWhiteSpace(instance) || !DateTime.TryParse(instance, out result)) return null;
 			return result;
 		}
+		/// <summary>
+		/// A shortcut method to parsing a timespan from a string
+		/// </summary>
+		public static TimeSpan AsTimeSpanOrDefault(this string instance, TimeSpan? @default = null)
+		{
+			TimeSpan result = @default.GetValueOrDefault();
+			if (!String.IsNullOrWhiteSpace(instance) && !TimeSpan.TryParse(instance, out result)) result = @default.GetValueOrDefault();
+			return result;
+		}
+		public static TimeSpan? AsDateTimeOrNull(this string instance)
+		{
+			TimeSpan result = TimeSpan.Zero;
+			if (String.IsNullOrWhiteSpace(instance) || !TimeSpan.TryParse(instance, out result)) return null;
+			return result;
+		}
+
+
+
 	}
 }
