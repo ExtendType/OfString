@@ -138,7 +138,7 @@ namespace ExtendType.OfString.Conversion
 			if (!String.IsNullOrWhiteSpace(instance) && !TimeSpan.TryParse(instance, out result)) result = @default.GetValueOrDefault();
 			return result;
 		}
-		public static TimeSpan? AsDateTimeOrNull(this string instance)
+		public static TimeSpan? AsTimeSpanOrNull(this string instance)
 		{
 			TimeSpan result = TimeSpan.Zero;
 			if (String.IsNullOrWhiteSpace(instance) || !TimeSpan.TryParse(instance, out result)) return null;
