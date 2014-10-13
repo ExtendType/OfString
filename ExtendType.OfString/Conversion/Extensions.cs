@@ -151,11 +151,11 @@ namespace ExtendType.OfString.Conversion
 		/// <remarks>
 		/// Generic type constraint is only limited to structs as an enum type is not allowed as a generic constraint. 
 		/// </remarks>
-		public static T? AsEnumOrDefault<T>(this string instance, T? @default = null)
+		public static T AsEnumOrDefault<T>(this string instance, T? @default = null)
 			where T : struct
 		{
 			T result = @default.GetValueOrDefault();
-			if (String.IsNullOrWhiteSpace(instance) || !Enum.TryParse<T>(instance, out result)) return null;
+			if (String.IsNullOrWhiteSpace(instance) || !Enum.TryParse<T>(instance, out result)) return default(T);
 			return result;
 
 		}
