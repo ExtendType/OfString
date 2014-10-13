@@ -145,7 +145,27 @@ namespace ExtendType.OfString.Conversion
 			return result;
 		}
 
+		/// <summary>
+		/// A shortcut method to parsing an enumerated struct
+		/// </summary>
+		/// <remarks>
+		/// Generic type constraint is only limited to structs as an enum type is not allowed as a generic constraint. 
+		/// </remarks>
+		public static T? AsEnumOrDefault<T>(this string instance, T? @default = null)
+			where T : struct
+		{
+			T result = @default.GetValueOrDefault();
+			if (String.IsNullOrWhiteSpace(instance) || !Enum.TryParse<T>(instance, out result)) return null;
+			return result;
 
+		}
 
+		public static T? AsTimeSpanOrNull<T>(this string instance)
+			where T : struct
+		{
+			T result = default(T);
+			if (String.IsNullOrWhiteSpace(instance) || !Enum.TryParse<T>(instance, out result)) return null;
+			return result;
+		}
 	}
 }
