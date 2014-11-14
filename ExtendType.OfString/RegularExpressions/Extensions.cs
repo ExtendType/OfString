@@ -56,6 +56,25 @@ namespace ExtendType.OfString.RegularExpressions
 		/// <summary>
 		/// Matches the string string to the supplied pattern
 		/// </summary>
+		public static Match Match(this string instance, string pattern, RegexOptions options)
+		{
+			Contract.Requires<ArgumentNullException>(!String.IsNullOrWhiteSpace(pattern));
+			return Regex.Match(instance, pattern, options);
+		}
+
+		/// <summary>
+		/// Matches the string string to the supplied pattern
+		/// </summary>
+		public static Match Match(this string instance, string pattern)
+		{
+			Contract.Requires<ArgumentNullException>(!String.IsNullOrWhiteSpace(pattern));
+			return Regex.Match(instance, pattern, RegexOptions.None);
+		}
+
+
+		/// <summary>
+		/// Matches the string string to the supplied pattern
+		/// </summary>
 		public static bool IsMatch(this string instance, string pattern, RegexOptions options)
 		{
 			Contract.Requires<ArgumentNullException>(!String.IsNullOrWhiteSpace(pattern));
@@ -68,7 +87,7 @@ namespace ExtendType.OfString.RegularExpressions
 		public static bool IsMatch(this string instance, string pattern)
 		{
 			Contract.Requires<ArgumentNullException>(!String.IsNullOrWhiteSpace(pattern));
-			return instance != null && Regex.IsMatch(instance, pattern,RegexOptions.None);
+			return instance != null && Regex.IsMatch(instance, pattern, RegexOptions.None);
 		}
 	}
 }

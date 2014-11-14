@@ -63,6 +63,27 @@ namespace ExtendType.OfString.Validation
 		{
 			return !String.IsNullOrWhiteSpace(instance);
 		}
+
+		public static bool IsAnyCaseEqualTo(this string instance, string value)
+		{
+			return String.Equals(instance, value, StringComparison.InvariantCultureIgnoreCase);
+		}
+
+		public static bool IsNotAnyCaseEqualTo(this string instance, string value)
+		{
+			return !String.Equals(instance, value, StringComparison.InvariantCultureIgnoreCase);
+		}
+
+		public static bool IsInvariantAnyCaseEqualTo(this string instance,string value)
+		{
+			return String.Equals(instance, value, StringComparison.InvariantCultureIgnoreCase);
+		}
+
+		public static bool IsNotInvariantAnyCaseEqualTo(this string instance, string value)
+		{
+			return !String.Equals(instance, value, StringComparison.InvariantCultureIgnoreCase);
+		}
+
 		public static string IfNullOrEmpty(this string instance, string value)
 		{
 			string result = instance;

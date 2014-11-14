@@ -16,15 +16,9 @@ namespace ExtendType.OfString.Tests.Validation
 		[TestMethod]
 		public void IsNullOrEmptyTest()
 		{
-			TestContext.WriteLine("Success: value is null");
-			((string)null).IsNullOrEmpty()
-				.Should().Be(true);
-			TestContext.WriteLine("Success: value is empty");
-			String.Empty.IsNullOrEmpty()
-				.Should().Be(true);
-			TestContext.WriteLine("Fail: value is not null or empty");
-			"test".IsNullOrEmpty()
-				.Should().Be(false);
+			((string)null).IsNullOrEmpty().Should().Be(true);
+			String.Empty.IsNullOrEmpty().Should().Be(true);
+			"test".IsNullOrEmpty().Should().Be(false);
 		}
 		[TestMethod]
 		public void IsNotNullOrEmptyTest()
