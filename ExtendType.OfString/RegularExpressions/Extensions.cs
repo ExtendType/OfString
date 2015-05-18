@@ -16,7 +16,7 @@ namespace ExtendType.OfString.RegularExpressions
 		public static Regex ToRegex(this string instance, RegexOptions options)
 		{
 			Regex result = null;
-			if (String.IsNullOrWhiteSpace(instance))
+			if (!String.IsNullOrWhiteSpace(instance))
 			{
 				result = new Regex(instance, options);
 			}
@@ -29,7 +29,7 @@ namespace ExtendType.OfString.RegularExpressions
 		public static Regex ToRegex(this string instance)
 		{
 			Regex result = null;
-			if (String.IsNullOrWhiteSpace(instance))
+			if (!String.IsNullOrWhiteSpace(instance))
 			{
 				result = new Regex(instance, RegexOptions.None);
 			}

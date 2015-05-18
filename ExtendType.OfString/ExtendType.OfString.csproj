@@ -103,6 +103,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conventions\Extensions.cs" />
     <Compile Include="Conversion\Extensions.cs" />
     <Compile Include="Formatting\Extensions.cs" />
     <Compile Include="Parsing\Extensions.cs" />
