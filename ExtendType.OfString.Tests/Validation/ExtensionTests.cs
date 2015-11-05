@@ -23,47 +23,25 @@ namespace ExtendType.OfString.Tests.Validation
 		[TestMethod]
 		public void IsNotNullOrEmptyTest()
 		{
-			TestContext.WriteLine("Success: value is not null or empty");
-			"test".IsNotNullOrEmpty()
-				.Should().Be(true);
-			TestContext.WriteLine("Fail: value is null");
-			((string)null).IsNotNullOrEmpty()
-				.Should().Be(false);
-			TestContext.WriteLine("Fail: value is empty");
-			String.Empty.IsNotNullOrEmpty()
-				.Should().Be(false);
+			"test".IsNotNullOrEmpty().Should().Be(true);
+			((string)null).IsNotNullOrEmpty().Should().Be(false);
+			String.Empty.IsNotNullOrEmpty().Should().Be(false);
 		}
 		[TestMethod]
 		public void IsNullOrWhiteSpaceTest()
 		{
-			TestContext.WriteLine("Success: value is null");
-			((string)null).IsNullOrWhiteSpace()
-				.Should().Be(true);
-			TestContext.WriteLine("Success: value is empty");
-			String.Empty.IsNullOrWhiteSpace()
-				.Should().Be(true);
-			TestContext.WriteLine("Success: value is white space");
-			" ".IsNullOrWhiteSpace()
-				.Should().Be(true);
-			TestContext.WriteLine("Fail: value is not null or empty");
-			"test".IsNullOrWhiteSpace()
-				.Should().Be(false);
+			((string)null).IsNullOrWhiteSpace().Should().Be(true);
+			String.Empty.IsNullOrWhiteSpace().Should().Be(true);
+			" ".IsNullOrWhiteSpace().Should().Be(true);
+			"test".IsNullOrWhiteSpace().Should().Be(false);
 		}
 		[TestMethod]
 		public void IsNullOrWhitespaceTest()
 		{
-			TestContext.WriteLine("Success: value is not null, empty or whitespace");
-			"test".IsNotNullOrWhiteSpace()
-				.Should().Be(true);
-			TestContext.WriteLine("Fail: value is null");
-			((string)null).IsNotNullOrWhiteSpace()
-				.Should().Be(false);
-			TestContext.WriteLine("Fail: value is empty");
-			String.Empty.IsNotNullOrWhiteSpace()
-				.Should().Be(false);
-			TestContext.WriteLine("Fail: value is whitespace");
-			" ".IsNotNullOrWhiteSpace()
-				.Should().Be(false);
+			"test".IsNotNullOrWhiteSpace().Should().Be(true);
+			((string)null).IsNotNullOrWhiteSpace().Should().Be(false);
+			String.Empty.IsNotNullOrWhiteSpace().Should().Be(false);
+			" ".IsNotNullOrWhiteSpace().Should().Be(false);
 		}
 	}
 }
