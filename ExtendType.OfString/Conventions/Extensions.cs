@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -43,11 +44,36 @@ namespace ExtendType.OfString.Conventions
 						}
 						builder.Append(letterOrDigit);
 					}
-					else if (Char.IsWhiteSpace(character)) upper = true;
+					else upper = true;
 				}
 				result = builder.ToString();
 			}
 			return result;
+		}
+
+		/// <summary>
+		/// Converts supplied string to title case using the supplied culture or the current thread culture if null
+		/// </summary>
+		public static string ToTitleCase(this string instance, CultureInfo culture)
+		{
+			string result = instance;
+			if (!String.IsNullOrWhiteSpace(instance))
+			{
+				instance = instance.ToLower();
+				if (culture == null) culture = CultureInfo.CurrentCulture;
+				result = culture.TextInfo.ToTitleCase(instance);
+			}
+			return result;
+		}
+
+		/// <summary>
+		/// Converts the supplied string to title case using the current thread culture
+		/// </summary>
+		/// <param name="instance"></param>
+		/// <returns></returns>
+		public static string ToTitleCase(this string instance)
+		{
+			return ToTitleCase(instance, null);
 		}
 	}
 }
