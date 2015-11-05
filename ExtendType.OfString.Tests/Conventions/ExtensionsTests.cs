@@ -18,7 +18,7 @@ namespace ExtendType.OfString.Tests.Conventions
 		}
 
 		[TestMethod]
-		public void CamelBack()
+		public void CamelBackTest()
 		{
 
 			((string)null).ToCamelBack().Should().Be(null);
@@ -31,7 +31,7 @@ namespace ExtendType.OfString.Tests.Conventions
 		}
 
 		[TestMethod]
-		public void ToTitleCase()
+		public void ToTitleCaseTest()
 		{
 			((string)null).ToTitleCase(null).Should().Be(null);
 			String.Empty.ToTitleCase(null).Should().Be(String.Empty);

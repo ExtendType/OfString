@@ -54,7 +54,7 @@ namespace ExtendType.OfString.Conventions
 		/// <summary>
 		/// Converts supplied string to title case using the supplied culture or the current thread culture if null
 		/// </summary>
-		public static string ToTitleCase(this string instance, CultureInfo culture)
+		public static string ToTitleCase(this string instance, CultureInfo culture = null)
 		{
 			string result = instance;
 			if (!String.IsNullOrWhiteSpace(instance))
@@ -64,16 +64,6 @@ namespace ExtendType.OfString.Conventions
 				result = culture.TextInfo.ToTitleCase(instance);
 			}
 			return result;
-		}
-
-		/// <summary>
-		/// Converts the supplied string to title case using the current thread culture
-		/// </summary>
-		/// <param name="instance"></param>
-		/// <returns></returns>
-		public static string ToTitleCase(this string instance)
-		{
-			return ToTitleCase(instance, null);
 		}
 	}
 }

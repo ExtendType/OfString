@@ -9,7 +9,7 @@ namespace ExtendType.OfString.Conversion
 	public static class Extensions
 	{
 		/// <summary>
-		/// A shortcut method to parsing a short from a string
+		/// Parse string as boolean or default, false if none
 		/// </summary>
 		public static bool AsBoolOrDefault(this string instance, bool? @default = null)
 		{
@@ -17,14 +17,18 @@ namespace ExtendType.OfString.Conversion
 			if (!String.IsNullOrWhiteSpace(instance) && !Boolean.TryParse(instance, out result)) result = @default.GetValueOrDefault();
 			return result;
 		}
+		/// <summary>
+		/// Parse string as boolean or null
+		/// </summary>
 		public static bool? AsBoolOrNull(this string instance)
 		{
 			bool result = false;
 			if (String.IsNullOrWhiteSpace(instance) || !Boolean.TryParse(instance, out result)) return null;
 			return result;
 		}
+
 		/// <summary>
-		/// A shortcut method to parsing a byte from a string
+		/// Parse string as byte or default, 0 if none
 		/// </summary>
 		public static byte AsByteOrDefault(this string instance, byte? @default = null)
 		{
@@ -32,15 +36,18 @@ namespace ExtendType.OfString.Conversion
 			if (!String.IsNullOrWhiteSpace(instance) && !Byte.TryParse(instance, out result)) result = @default.GetValueOrDefault();
 			return result;
 		}
-
+		/// <summary>
+		/// Parse string as byte or null
+		/// </summary>
 		public static byte? AsByteOrNull(this string instance)
 		{
 			byte result = 0;
 			if (String.IsNullOrWhiteSpace(instance) || !Byte.TryParse(instance, out result)) return null;
 			return result;
 		}
+	
 		/// <summary>
-		/// A shortcut method to parsing a short from a string
+		/// Parse string as short or default, 0 if none
 		/// </summary>
 		public static short AsShortOrDefault(this string instance, short? @default = null)
 		{
@@ -48,14 +55,18 @@ namespace ExtendType.OfString.Conversion
 			if (!String.IsNullOrWhiteSpace(instance) && !Int16.TryParse(instance, out result)) result = @default.GetValueOrDefault();
 			return result;
 		}
+		/// <summary>
+		/// Parse string as short or null
+		/// </summary>
 		public static short? AsShortOrNull(this string instance)
 		{
 			short result = 0;
 			if (String.IsNullOrWhiteSpace(instance) || !Int16.TryParse(instance, out result)) return null;
 			return result;
 		}
+		
 		/// <summary>
-		/// A shortcut method to parsing a int from a string
+		/// Parse string as int or default, 0 if none
 		/// </summary>
 		public static int AsIntOrDefault(this string instance, int? @default = null)
 		{
@@ -63,44 +74,56 @@ namespace ExtendType.OfString.Conversion
 			if (!String.IsNullOrWhiteSpace(instance) && !Int32.TryParse(instance, out result)) result = @default.GetValueOrDefault();
 			return result;
 		}
+		/// <summary>
+		/// Parse string as int or null
+		/// </summary>
 		public static int? AsIntOrNull(this string instance)
 		{
 			int result = 0;
 			if (String.IsNullOrWhiteSpace(instance) || !Int32.TryParse(instance, out result)) return null;
 			return result;
 		}
+
 		/// <summary>
-		/// A shortcut method to parsing a single or float from a string
+		/// Parse string as float or default, 0.0 if none
 		/// </summary>
-		public static float AsFloatlOrDefault(this string instance, float? @default = null)
+		public static float AsFloatOrDefault(this string instance, float? @default = null)
 		{
 			float result = @default.GetValueOrDefault();
 			if (!String.IsNullOrWhiteSpace(instance) && !Single.TryParse(instance, out result)) result = @default.GetValueOrDefault();
 			return result;
 		}
-		public static float? AsFloatlOrNull(this string instance)
+		/// <summary>
+		/// Parse string as float or null
+		/// </summary>
+		public static float? AsFloatOrNull(this string instance)
 		{
 			float result = Single.NaN;
 			if (String.IsNullOrWhiteSpace(instance) || !Single.TryParse(instance, out result)) return null;
 			return result;
 		}
+
 		/// <summary>
-		/// A shortcut method to parsing a double from a string
+		/// Parse string as double or default, 0.0 if none
 		/// </summary>
-		public static double AsDoublelOrDefault(this string instance, double? @default = null)
+		public static double AsDoubleOrDefault(this string instance, double? @default = null)
 		{
 			double result = @default.GetValueOrDefault();
 			if (!String.IsNullOrWhiteSpace(instance) && !Double.TryParse(instance, out result)) result = @default.GetValueOrDefault();
 			return result;
 		}
-		public static double? AsDoublelOrNull(this string instance)
+		/// <summary>
+		/// Parse string as double or null
+		/// </summary>
+		public static double? AsDoubleOrNull(this string instance)
 		{
 			double result = Double.NaN;
 			if (String.IsNullOrWhiteSpace(instance) || !Double.TryParse(instance, out result)) return null;
 			return result;
 		}
+
 		/// <summary>
-		/// A shortcut method to parsing a decimal from a string
+		/// Parse string as decimal or default, 0.0 if none
 		/// </summary>
 		public static decimal AsDecimalOrDefault(this string instance, decimal? @default = null)
 		{
@@ -108,14 +131,18 @@ namespace ExtendType.OfString.Conversion
 			if (!String.IsNullOrWhiteSpace(instance) && !Decimal.TryParse(instance, out result)) result = @default.GetValueOrDefault();
 			return result;
 		}
+		/// <summary>
+		/// Parse string as decimal or null
+		/// </summary>
 		public static decimal? AsDecimalOrNull(this string instance)
 		{
 			decimal result = Decimal.Zero;
 			if (String.IsNullOrWhiteSpace(instance) || !Decimal.TryParse(instance, out result)) return null;
 			return result;
 		}
+
 		/// <summary>
-		/// A shortcut method to parsing a date time from a string
+		/// Parse string as date time or default, DateTime.MinValue if none
 		/// </summary>
 		public static DateTime AsDateTimeOrDefault(this string instance, DateTime? @default = null)
 		{
@@ -123,14 +150,18 @@ namespace ExtendType.OfString.Conversion
 			if (!String.IsNullOrWhiteSpace(instance) && !DateTime.TryParse(instance, out result)) result = @default.GetValueOrDefault();
 			return result;
 		}
+		/// <summary>
+		/// Parse string as date time or null
+		/// </summary>
 		public static DateTime? AsDateTimeOrNull(this string instance)
 		{
 			DateTime result = DateTime.MinValue;
 			if (String.IsNullOrWhiteSpace(instance) || !DateTime.TryParse(instance, out result)) return null;
 			return result;
 		}
+
 		/// <summary>
-		/// A shortcut method to parsing a timespan from a string
+		/// Parse timespan or default, TimeSpan.Zero if none
 		/// </summary>
 		public static TimeSpan AsTimeSpanOrDefault(this string instance, TimeSpan? @default = null)
 		{
@@ -138,6 +169,9 @@ namespace ExtendType.OfString.Conversion
 			if (!String.IsNullOrWhiteSpace(instance) && !TimeSpan.TryParse(instance, out result)) result = @default.GetValueOrDefault();
 			return result;
 		}
+		/// <summary>
+		/// Parse timespan or null
+		/// </summary>
 		public static TimeSpan? AsTimeSpanOrNull(this string instance)
 		{
 			TimeSpan result = TimeSpan.Zero;
@@ -146,7 +180,7 @@ namespace ExtendType.OfString.Conversion
 		}
 
 		/// <summary>
-		/// A shortcut method to parsing an enumerated struct
+		/// Parse string as Enum or default
 		/// </summary>
 		/// <remarks>
 		/// Generic type constraint is only limited to structs as an enum type is not allowed as a generic constraint. 
@@ -159,8 +193,10 @@ namespace ExtendType.OfString.Conversion
 			return result;
 
 		}
-
-		public static T? AsTimeSpanOrNull<T>(this string instance)
+		/// <summary>
+		/// Parse string as enum or null
+		/// </summary>
+		public static T? AsEnumOrNull<T>(this string instance)
 			where T : struct
 		{
 			T result = default(T);
