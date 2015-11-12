@@ -16,7 +16,7 @@ namespace ExtendType.OfString.Tests.Formatting
 		}
 
 		[TestMethod]
-		public void FormatWith()
+		public void FormatWithTest()
 		{
 			const string control = "test";
 			string experemental = "{0}";
